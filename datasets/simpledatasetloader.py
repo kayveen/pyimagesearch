@@ -34,6 +34,7 @@ class SimpleDatasetLoader:
             # /path/to/dataset/{class}/{image}.jpg
 
             image = cv2.imread(imagePath)
+
             label = imagePath.split(os.path.sep)[-2]
 
             # check to see if our preprocessors are not None
@@ -41,7 +42,7 @@ class SimpleDatasetLoader:
                 # loop over the preprocessors and apply each to the image
 
                 for p in self.preprocessors:
-                    p.preprocess(image)
+                    image = p.preprocess(image)
 
             #  treat our processed image as a "feature vector"
             # by updating the data list followed by the labels
@@ -50,8 +51,8 @@ class SimpleDatasetLoader:
             labels.append(label)
 
             # Show an update every 'verbose' image
-            if verbose > 0 and i > 0 and (i+1) % verbose  == 0:
-                print(f'[INFO] processed {i+1}/{len(imagePaths)}')
+            if verbose > 0 and i > 0 and (i + 1) % verbose == 0:
+                print(f'[INFO] processed {i + 1}/{len(imagePaths)}')
 
         # return a tuple of the data and labels
         return np.array(data), np.array(labels)
