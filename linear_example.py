@@ -14,7 +14,7 @@ b = np.random.randn(3)
 
 # load our example image, resize it, and then flatten it into our
 # "feature vector" representation
-orig = cv2.imread('b.png')
+orig = cv2.imread('b.jpg')
 image = cv2.resize(orig, (32, 32)).flatten()
 
 # compute the output scores by taking the dot product between the
