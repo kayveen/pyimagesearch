@@ -93,3 +93,18 @@ for epoch in np.arange(0, args["epochs"]):
 print("[INFO] evaluating...")
 preds = predict(testX, W)
 print(classification_report(testY, preds))
+
+# plot the (testing) classification data
+plt.style.use("ggplot")
+plt.figure()
+plt.title("Data")
+plt.scatter(testX[:, 0], testX[:, 1], marker="o", c=testY.reshape(500,), s=30)
+
+# construct a figure that plots the loss over time
+plt.style.use("ggplot")
+plt.figure()
+plt.plot(np.arange(0, args['epochs']), losses)
+plt.title("Training Loss")
+plt.xlabel("Epoch #")
+plt.ylabel("Loss")
+plt.show()
