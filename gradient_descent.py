@@ -85,7 +85,7 @@ for epoch in np.arange(0, args["epochs"]):
     # check to see if an update should be displayed
 
     if epoch == 0 or (epoch + 1) % 5 == 0:
-        80
+
         print("[INFO] epoch={}, loss={:.7f}".format(int(epoch + 1),
                                                     loss))
 
