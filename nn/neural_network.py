@@ -48,7 +48,6 @@ class NeuralNetwork:
         #  that ‘x‘ has already been passed through the ‘sigmoid‘ function
         return x * (1 - x)
 
-
     def fit(self, X, y, epochs=100, displayUpdate=10):
         # Bias trick
         X = np.c_[X, np.ones((X.shape[0]))]
@@ -61,8 +60,7 @@ class NeuralNetwork:
             # check to see if we should display a training update
             if epoch == 0 or (epoch + 1) % displayUpdate == 0:
                 loss = self.calculate_loss(X, y)
-                print("[INFO] epoch={}, loss={:.7f}".format(epoch+1, loss))
-
+                print("[INFO] epoch={}, loss={:.7f}".format(epoch + 1, loss))
 
     def fit_partial(self, x, y):
 
@@ -135,7 +133,6 @@ class NeuralNetwork:
             p = np.c_[p, np.ones((p.shape[0]))]
 
         for layer in np.arange(0, len(self.W)):
-
             p = self.sigmoid(np.dot(p, self.W[layer]))
 
         return p
