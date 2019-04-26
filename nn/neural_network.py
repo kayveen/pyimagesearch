@@ -127,3 +127,23 @@ class NeuralNetwork:
             # place
             self.W[layer] = self.W[layer] - self.alpha * np.dot(A[layer].T, D[layer])
 
+    def predict(self, X, addBias=True):
+
+        p = np.atleast_2d(X)
+
+        if addBias:
+            p = np.c_[p, np.ones((p.shape[0]))]
+
+        for layer in np.arange(0, len(self.W)):
+
+            p = self.sigmoid(np.dot(p, self.W[layer]))
+
+        return p
+
+    def calculate_loss(self, X, targets):
+
+        targets = np.atleast_2d(targets)
+        predictions = self.predict(X, addBias=False)
+        loss = np.sum((predictions - targets) ** 2) / 2
+
+        return loss
