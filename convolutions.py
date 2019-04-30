@@ -135,6 +135,6 @@ for (kernelName, K) in kernelBank:
 
     cv2.imshow("Original", gray)
     cv2.imshow("{} - convolve".format(kernelName), convolveOutput)
-    cv2.imshow("{} - ppencv".format(kernelName), opencvOutput)
+    cv2.imshow("{} - opencv".format(kernelName), opencvOutput)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
