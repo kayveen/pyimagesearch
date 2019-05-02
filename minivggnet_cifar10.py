@@ -28,7 +28,7 @@ trainY = lb.fit_transform(trainY)
 testY = lb.transform(testY)
 
 labelNames = ["airplane", "automobile", "birds", "cat", "deer", "dog", "frog",
-    "frog", "horse", "ship", "truck"]
+              "horse", "ship", "truck"]
 
 print("[INFO] compiling model")
 
