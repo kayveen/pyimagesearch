@@ -1,4 +1,5 @@
 import matplotlib
+
 matplotlib.use("Agg")
 
 from sklearn.preprocessing import LabelBinarizer
@@ -11,14 +12,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 
-def step_decay(epoch):
 
+def step_decay(epoch):
     initAlpha = 0.01
     factor = 0.25
     dropEvery = 5
 
     # compute learning rate for the current epoch
-    alpha = initAlpha * (factor ** np.floor((1+epoch) / dropEvery))
+    alpha = initAlpha * (factor ** np.floor((1 + epoch) / dropEvery))
 
     return float(alpha)
 
@@ -29,7 +30,7 @@ args = vars(ap.parse_args())
 
 print("[INFO] loading cifar10 data")
 
-(trainX, trainY), (testX, testY)= cifar10.loadData()
+(trainX, trainY), (testX, testY) = cifar10.load_data()
 
 trainX = trainX.astype("float") / 255.0
 testX = testX.astype("float") / 255.0
