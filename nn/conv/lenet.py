@@ -5,7 +5,7 @@ from tensorflow.keras import backend as K
 
 
 class LeNet:
-
+    # [Conv=>relu ==>pool] * 2 =>fc=>softmax
     @staticmethod
     def build(width, height, depth, classes):
         model = Sequential()
