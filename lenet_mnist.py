@@ -24,7 +24,7 @@ lb = LabelBinarizer()
 trainY = lb.fit_transform(trainY)
 testY = lb.transform(testY)
 
-print ("[INFO] compiling model...")
+print("[INFO] compiling model...")
 
 optimizer = SGD(lr=0.01)
 model = LeNet.build(width=28, height=28, depth=1, classes=10)
