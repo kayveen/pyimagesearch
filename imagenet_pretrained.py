@@ -4,9 +4,9 @@ from tensorflow.keras.applications import InceptionV3
 from tensorflow.keras.applications import Xception #Tensorflow Only
 from tensorflow.keras.applications import VGG16
 from tensorflow.keras.applications import VGG19
-from tensorflow.keras.applications import imagenet_utils
-from tensorflow.keras.applications.inceptionv3 import preprocess_input
-from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.python.keras.applications import imagenet_utils
+from tensorflow.keras.applications.inception_v3 import preprocess_input
+from tensorflow.python.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing.image import load_img
 import numpy as np
 import argparse
