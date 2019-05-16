@@ -44,8 +44,8 @@ model.compile(loss="categorical_crossentropy",
               metrics=["accuracy"])
 
 # construct the set of callbacks
-figPath = os.path.sep.join([args["output"], "{}.png".format(os.getpid)])
-jsonPath = os.path.sep.join([args["output"], "{}.json".format(os.getpid)])
+figPath = os.path.sep.join([args["output"], "{}.png".format(os.getpid())])
+jsonPath = os.path.sep.join([args["output"], "{}.json".format(os.getpid())])
 callbacks = [TrainingMonitor(figPath, jsonPath)]
 
 # train the network
