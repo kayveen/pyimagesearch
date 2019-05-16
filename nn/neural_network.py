@@ -7,7 +7,7 @@ class NeuralNetwork:
         """
 
         :param layers: A list of integers which represents the actual architecture of the feedforward
-                network. For example, a value of [2;2;1] would imply that our first input layer has two nodes,
+                network. For example, a value of [2,2,1] would imply that our first input layer has two nodes,
                 our hidden layer has two nodes, and our final output layer has one node
         :param alpha: learning rate of our neural network
         """
