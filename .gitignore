@@ -6,3 +6,4 @@ nn/__pycache__/
 nn/conv/__pycache__/
 preprocessing/__pycache__/
 weights
+logs
