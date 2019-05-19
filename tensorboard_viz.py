@@ -28,10 +28,10 @@ model.compile(loss='categorical_crossentropy',
 
 # construct the callback to save only the best model to disk
 # based on the validation loss
-checkpoint = TensorBoard(log_dir='./logs', histogram_freq=2, batch_size=32,
+tensorviz = TensorBoard(log_dir='./logs', histogram_freq=2, batch_size=32,
                          write_graph=True, write_grads=False,
                          write_images=False)
-callbacks = [checkpoint]
+callbacks = [tensorviz]
 
 # train the network
 print('[INFO] training network....')
