@@ -1,10 +1,10 @@
 # import the necessary packages
 from tensorflow.keras.applications import VGG16
-from tensorflow.keras.applications import imagenet_utils
+from tensorflow.python.keras.applications import imagenet_utils
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing.image import load_img
 from sklearn.preprocessing import LabelEncoder
-from io import HDF5DatasetWriter
+from inout import HDF5DatasetWriter
 from imutils import paths
 import numpy as np
 import progressbar
@@ -69,6 +69,8 @@ for i in np.arange(0, len(imagePaths), bs):
     for (j, imagePath) in enumerate(batchPaths):
         # load the input image using the Keras helper utility
         # while ensuring the image is resized to 224x224 pixels
+        print(i, '-------------------------', j)
+        print(len(imagePath))
         image = load_img(imagePath, target_size=(224, 224))
         image = img_to_array(image)
 
